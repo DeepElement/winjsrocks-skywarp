@@ -3,6 +3,10 @@ var WinJSRocks = require('winjsrocks'),
   WinJSRocksExtras = require('winjsrocks-extras'),
   $ = require('jquery');
 
+
+// Require styles
+//require('./css/default.less');
+
 var app = new WinJSRocks.Application();
 
 // Register App Views/Components
