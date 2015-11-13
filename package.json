@@ -6,7 +6,7 @@
   "scripts": {
     "test": "gulp test",
     "build": "gulp dist",
-    "start": "npm install && gulp dist && node dist/server/server.js",
+    "start": "gulp dist && node dist/server/server.js",
     "monitor": "nodemon dist/web-client/server.js",
     "deploy": "gcloud preview app deploy app.yaml"
   },
@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "^1.5.0",
     "jquery": "^2.1.4",
+    "moment": "^2.10.6",
     "winjs": "^4.4.0",
     "winjsrocks": "latest",
     "winjsrocks-extras": "latest"
@@ -39,7 +40,9 @@
     "gulp-run-sequence": "^0.3.2",
     "gulp-util": "^3.0.7",
     "jsdom": "^7.0.2",
+    "less": "^2.5.3",
     "less-loader": "^2.2.1",
+    "node-sass": "^3.4.2",
     "rimraf": "^2.4.3",
     "sass-loader": "^3.1.1",
     "should": "^7.1.1",

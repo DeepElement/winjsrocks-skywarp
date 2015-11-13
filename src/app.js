@@ -5,33 +5,34 @@ var WinJSRocks = require('winjsrocks'),
 
 
 // Require styles
-//require('./css/default.less');
+require('./css/default.less');
 
 var app = new WinJSRocks.Application();
 
 // Register App Views/Components
-/*var viewKeys = [];
-var itemKeys = [];
+var viewKeys = ["splash", "landing", "items", "toy-detail", "seller-detail"];
+var itemKeys = ["toy", "seller"];
 viewKeys.forEach(function(viewKey) {
   app.builder.registerView(
     viewKey,
-    require('./views/' + viewKey + '/view'),
-    require('./views/' + viewKey + '/view-model'),
-    'views/' + viewKey + '/view.html');
+    require('./view/pages/' + viewKey + '/view'),
+    require('./view/pages/' + viewKey + '/view-model'),
+    'view/pages/' + viewKey + '/view.html');
 });
 itemKeys.forEach(function(item) {
-  app.builder.registerDomainModel(item, require('./components/model/' + item));
+  app.builder.registerDomainModel(item, require('./component/model/' + item));
   app.builder.registerDomainModelView(item,
-    require('./item-templates/' + item + '/view'),
-    require('./item-templates/' + item + '/view-model'),
-    'item-templates/' + item + '/view.html');
-});*/
+    require('./view/item/' + item + '/view'),
+    require('./view/item/' + item + '/view-model'),
+    'view/item/' + item + '/view.html');
+});
 
 // Start the WinJS App
 WinJS.Application.start();
 
 // https://msdn.microsoft.com/en-us/library/windows/apps/br212679.aspx
 WinJS.Application.onactivated = function(e) {
+
   e.detail.setPromise(new WinJS.Promise(function(completed, error) {
 
     // Call configure on WinJSRocks
@@ -43,6 +44,7 @@ WinJS.Application.onactivated = function(e) {
     }, function(err) {
       if (err)
         return error(err);
+
       return completed();
     });
 

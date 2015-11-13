@@ -53,9 +53,10 @@ gulp.task('dist:web-client:deploy:sources', function() {
   return gulp.src([
       'package/web-client/**',
       'src/**/*.*',
-      '!src/components/**',
+      '!src/*.js',
+      '!src/component/**',
       '!src/css/**',
-      '!src/views/**/*.js'
+      '!src/view/**/*.js'
     ])
     .pipe(gulp.dest('./dist/web-client'));
 });
@@ -108,7 +109,7 @@ gulp.task("dist:package:debug", function(cb) {
 gulp.task("web:watch", ['dist'], function(callback) {
   // modify some webpack config options
   var myConfig = Object.create(webpackConfig);
-  myConfig.devtool = "eval";
+  //myConfig.devtool = "eval";
   myConfig.debug = true;
 
   // Start a webpack-dev-server

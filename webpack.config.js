@@ -5,7 +5,7 @@ var path = require("path"),
 
 module.exports = {
   cache: true,
-  entry: glob.sync("./src/app.js"),
+  entry: "./src/app.js",
   output: {
     path: __dirname + "/dist/web-client",
     filename: "bundle.js"
