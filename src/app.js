@@ -27,6 +27,20 @@ itemKeys.forEach(function(item) {
     'view/item/' + item + '/view.html');
 });
 
+// Register Providers
+WinJSRocks.Application.Instance.builder.registerProvider("amazonData",
+  require('./component/provider/amazon-data'));
+WinJSRocks.Application.Instance.builder.registerProvider("localStorage",
+  WinJSRocksExtras.Provider.IndexDBStorage);
+
+// Register Services
+WinJSRocks.Application.Instance.builder.registerService("dataSync",
+  require('./component/service/data-sync'))
+WinJSRocks.Application.Instance.builder.registerProvider("authentication",
+  require('./component/service/authentication'))
+
+
+
 // Start the WinJS App
 WinJS.Application.start();
 
@@ -38,7 +52,7 @@ WinJS.Application.onactivated = function(e) {
     // Call configure on WinJSRocks
     app.configure({
       plugins: [
-        //WinJSRocksExtras.Storage.IndexDBStoragePlugin
+        WinJSRocksExtras.Plugin.PlatformFeature
       ],
       instanceKey: "winjsrocks-skywarp"
     }, function(err) {
