@@ -39,8 +39,6 @@ WinJSRocks.Application.Instance.builder.registerService("dataSync",
 WinJSRocks.Application.Instance.builder.registerProvider("authentication",
   require('./component/service/authentication'))
 
-
-
 // Start the WinJS App
 WinJS.Application.start();
 

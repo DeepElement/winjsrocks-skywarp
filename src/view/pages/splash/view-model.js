@@ -19,7 +19,7 @@ export default class extends WinJSRocks.ViewModel.Base {
     return true;
   }
 
-  onInitialDataLoadedMessage() {
+  onDataSyncLoadedMessage() {
     var that = this;
     this.MessageService.unregister("initialDataLoadedMessage", this.onInitialDataLoadedMessageBinding);
     that.MessageService.send("navigateToMessage", {
