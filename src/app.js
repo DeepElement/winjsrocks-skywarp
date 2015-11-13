@@ -7,6 +7,9 @@ var WinJSRocks = require('winjsrocks'),
 // Require styles
 require('./css/default.less');
 
+window.$ = require('jquery');
+window.WinJSRocks = require('winjsrocks');
+
 var app = new WinJSRocks.Application();
 
 // Register App Views/Components

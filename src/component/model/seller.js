@@ -4,8 +4,9 @@ import BaseModel from "./base";
 export default class extends BaseModel {
 
   constructor(options) {
-    super();
+    super(options);
     options = options || {};
+    this.contentType = "Seller";
     this._products = [];
   }
 

@@ -9,6 +9,14 @@
 
 <body>
   <h1>Landing</h1>
+  <button data-win-bind="onclick: someActionCommand WinJSRocks.Application.Instance.Binding.Mode.Command">Button Action</button>
+
+  <div id="toysListView" class="win-selectionstylefilled" data-win-control="WinJS.UI.ListView" data-win-options="{
+      itemTemplate: WinJSRocks.Application.Instance.Binding.Template.ItemTemplateSelector,
+      layout: { type: WinJS.UI.GridLayout },
+        selectionMode: 'single'
+    }">
+  </div>
 </body>
 
 </html>
