@@ -7,6 +7,7 @@ export default class extends BaseModel {
     super();
     options = options || {};
     this._seller = null;
+    this._thumbnail = null;
   }
 
   get seller() {
@@ -17,5 +18,14 @@ export default class extends BaseModel {
     this._seller = val;
     this.notify("seller");
   }
-  
+
+  get thumbnail() {
+    return this._thumbnail;
+  }
+
+  set thumbnail(val) {
+    this._thumbnail = val;
+    this.notify("thumbnail");
+  }
+
 };

@@ -49,6 +49,7 @@ WinJS.Application.onactivated = function(e) {
 
     // Call configure on WinJSRocks
     app.configure({
+      "app-config": "app.config.json",
       plugins: [
         WinJSRocksExtras.Plugin.PlatformFeature
       ],
